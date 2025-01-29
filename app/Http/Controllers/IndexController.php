@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\View;
 
 class IndexController extends Controller
 {
-    public function __invoke(): RedirectResponse
+    public function __invoke(): View
     {
-        return redirect(route('links.index'));
+        return view('app');
     }
 }
