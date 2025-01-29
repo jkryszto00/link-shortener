@@ -56,6 +56,11 @@ const routes = [
             requiresAuth: true,
             title: 'Profile'
         }
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'not-found',
+        component: () => import('../views/NotFoundView.vue')
     }
 ];
 
