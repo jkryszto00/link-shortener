@@ -3,7 +3,6 @@ import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-    base: "https://impartial-wisdom-production.up.railway.app",
     plugins: [
         vue(),
         laravel({
@@ -16,8 +15,5 @@ export default defineConfig({
             vue: "vue/dist/vue.esm-bundler.js",
             '@': '/resources/js',
         },
-    },
-    server: {
-        https: true
     }
 });
