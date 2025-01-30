@@ -43,10 +43,11 @@ const handleLogout = async () => {
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
-                                <NavLink
-                                    href="/dashboard"
-                                >
+                                <NavLink href="/dashboard">
                                     Dashboard
+                                </NavLink>
+                                <NavLink href="/links">
+                                    Links
                                 </NavLink>
                             </div>
                         </div>

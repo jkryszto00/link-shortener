@@ -2,6 +2,7 @@
 import UrlShortener from '@/components/UrlShortener.vue'
 import Guest from "@/layouts/Guest.vue";
 import {useAuthStore} from "@/stores/auth.js";
+import SecondaryButton from "@/components/SecondaryButton.vue";
 
 const auth = useAuthStore()
 </script>
@@ -17,22 +18,24 @@ const auth = useAuthStore()
                 </p>
             </div>
 
-            <UrlShortener />
-
             <div class="text-center">
                 <RouterLink
                     v-if="auth.isAuthenticated"
                     to="/dashboard"
                     class="text-sm text-gray-500 font-medium hover:underline"
                 >
-                    Go to dashboard page
+                    <SecondaryButton>
+                        Go to dashboard page
+                    </SecondaryButton>
                 </RouterLink>
                 <RouterLink
                     v-else
                     to="/login"
                     class="text-sm text-gray-500 font-medium hover:underline"
                 >
-                    Go to login page
+                    <SecondaryButton>
+                        Go to login page
+                    </SecondaryButton>
                 </RouterLink>
             </div>
         </main>

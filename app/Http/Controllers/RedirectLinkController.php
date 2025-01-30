@@ -37,15 +37,9 @@ class RedirectLinkController extends Controller
             dispatch(new TrackLinkClickJob($link->getKey(), $clickTracking));
 
             return redirect($link->url);
-        } catch (InvalidArgumentException $e) {
+        } catch (InvalidArgumentException|ModelNotFoundException $e) {
             Log::error($e->getMessage(), [
                 'short_code' => $shortCode
-            ]);
-
-            abort(400);
-        } catch (ModelNotFoundException $e) {
-            Log::error($e->getMessage(), [
-                'short_code' => $shortCode,
             ]);
 
             abort(404);

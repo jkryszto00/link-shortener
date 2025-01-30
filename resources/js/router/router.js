@@ -58,6 +58,38 @@ const routes = [
         }
     },
     {
+        path: '/links',
+        component: () => import('../views/Link/IndexView.vue'),
+        meta: {
+            requiresAuth: true,
+            title: 'Links'
+        }
+    },
+    {
+        path: '/links/create',
+        component: () => import('../views/Link/CreateView.vue'),
+        meta: {
+            requiresAuth: true,
+            title: 'Create link'
+        }
+    },
+    {
+        path: '/links/:id',
+        component: () => import('../views/Link/ShowView.vue'),
+        meta: {
+            requiresAuth: true,
+            title: 'Show link'
+        }
+    },
+    {
+        path: '/links/:id/edit',
+        component: () => import('../views/Link/EditView.vue'),
+        meta: {
+            requiresAuth: true,
+            title: 'Edit link'
+        }
+    },
+    {
         path: '/:pathMatch(.*)*',
         name: 'not-found',
         component: () => import('../views/NotFoundView.vue')
